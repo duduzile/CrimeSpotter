@@ -9,4 +9,36 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="crimespotter.rhokpta.unisa.co.za.crimespotter.RegisterActivity">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:id="@+id/register_button"
+        android:layout_marginTop="83dp"
+        android:layout_below="@+id/editText2"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        android:ems="10"
+        android:id="@+id/email_input"
+        android:layout_marginBottom="83dp"
+        android:layout_above="@+id/password_input"
+        android:layout_centerHorizontal="true"
+        android:text="@string/email" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:ems="10"
+        android:id="@+id/password_input"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/email_input"
+        android:layout_alignStart="@+id/email_input"
+        android:text="@string/password" />
 </RelativeLayout>
