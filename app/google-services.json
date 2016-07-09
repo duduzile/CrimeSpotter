@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1067376948276",
+    "firebase_url": "https://crime-spotter.firebaseio.com",
+    "project_id": "crime-spotter",
+    "storage_bucket": "crime-spotter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067376948276:android:59324bfaaa13a854",
+        "android_client_info": {
+          "package_name": "crimespotter.rhokpta.unisa.co.za.crimespotter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067376948276-ocl0p9d95slb0hfum3mft7ubdkfc0vro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPOH4ZblAxRDwICtrubiPslpDLEKUGYLA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
