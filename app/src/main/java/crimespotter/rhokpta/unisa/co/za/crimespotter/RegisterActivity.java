@@ -1,5 +1,6 @@
 package crimespotter.rhokpta.unisa.co.za.crimespotter;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
@@ -55,7 +57,10 @@ public class RegisterActivity extends AppCompatActivity {
         register_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                createEmailAndPassword(email_input.getText().toString(), email_input.getText().toString());
+
+                if (email_input.getText().toString().length() > 0 && password_input.getText().toString().length() > 0) {
+                    createEmailAndPassword(email_input.getText().toString(), password_input.getText().toString());
+                }
             }
         });
 
@@ -86,8 +91,12 @@ public class RegisterActivity extends AppCompatActivity {
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
 
+                        if (task.isSuccessful()) {
+                            //take user to the Apps reporting activity
+                            Intent myIntent = new Intent(RegisterActivity.this, MainActivity.class);
+                            RegisterActivity.this.startActivity(myIntent);
+                        } else {
 
-                        if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithEmail", task.getException());
                             Toast.makeText(RegisterActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
