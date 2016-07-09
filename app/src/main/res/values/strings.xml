@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">CrimeSpotter</string>
+    <string name="app_name">Crime Spotter</string>
     <string name="register">Register</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
+    <string name="crime_spotter">Crime Spotter</string>
+    <string name="no_location_detected">No Location Found</string>
 </resources>
