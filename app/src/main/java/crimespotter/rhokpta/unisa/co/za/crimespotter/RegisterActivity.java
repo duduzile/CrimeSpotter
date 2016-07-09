@@ -55,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
         register_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loginEmailAndPassword(email_input.getText().toString(), email_input.getText().toString());
+                createEmailAndPassword(email_input.getText().toString(), email_input.getText().toString());
             }
         });
 
@@ -75,8 +75,8 @@ public class RegisterActivity extends AppCompatActivity {
         }
     }
 
-    public void loginEmailAndPassword(String email, String password) {
-        mAuth.signInWithEmailAndPassword(email, password)
+    public void createEmailAndPassword(String email, String password) {
+        mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -85,6 +85,8 @@ public class RegisterActivity extends AppCompatActivity {
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
+
+
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithEmail", task.getException());
                             Toast.makeText(RegisterActivity.this, "Authentication failed.",
