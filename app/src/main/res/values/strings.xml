@@ -3,6 +3,7 @@
     <string name="register">Register</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
+
     <string name="crime_spotter">Crime Spotter</string>
     <string name="no_location_detected">No Location Found</string>
 
@@ -41,6 +42,7 @@
     <string name="error_cannot_be_empty">This cannot be empty.</string>
     <string name="error_invalid_contact_number">This contact is invalid.</string>
 
-
+    <string name="email_input">Email</string>
+    <string name="password_input">Password</string>
 
 </resources>

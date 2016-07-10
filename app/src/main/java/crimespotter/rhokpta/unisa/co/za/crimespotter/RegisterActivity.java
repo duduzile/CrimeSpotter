@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -59,12 +60,21 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (email_input.getText().toString().length() > 0 && password_input.getText().toString().length() > 0) {
-                    createEmailAndPassword(email_input.getText().toString(), password_input.getText().toString());
+                    if (isValidEmail(email_input.getText())) {
+                        createEmailAndPassword(email_input.getText().toString(), password_input.getText().toString());
+                    } else {
+                        email_input.setError("Please Enter a valid Email Address");
+                    }
+
+                } else {
+                    email_input.setError("Please do not leave empty");
+                    password_input.setError("Please do not leave empty");
                 }
             }
         });
 
     }
+
 
     @Override
     public void onStart() {
@@ -95,6 +105,7 @@ public class RegisterActivity extends AppCompatActivity {
                             //take user to the Apps reporting activity
                             Intent myIntent = new Intent(RegisterActivity.this, MainActivity.class);
                             RegisterActivity.this.startActivity(myIntent);
+                            finish();
                         } else {
 
                             Log.w(TAG, "signInWithEmail", task.getException());
@@ -104,6 +115,10 @@ public class RegisterActivity extends AppCompatActivity {
 
                     }
                 });
+    }
+
+    public final static boolean isValidEmail(CharSequence target) {
+        return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
 
 }
