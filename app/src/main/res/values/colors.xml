@@ -16,5 +16,7 @@
 
     <color name="colorDarkGrey">#AEAEAE</color>
     <color name="colorGrey">#666666</color>
+    <color name="button_default">#B6B7B7</color>
+    <color name="button_pressed">#2A5C91</color>
 
 </resources>

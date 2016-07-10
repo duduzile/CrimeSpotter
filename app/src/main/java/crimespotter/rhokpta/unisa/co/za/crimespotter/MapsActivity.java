@@ -73,6 +73,7 @@ public class MapsActivity extends AppCompatActivity implements
     public void onResume() {
         super.onResume();
 
+        mDataRef.keepSynced(true);
         mDataRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -80,8 +81,7 @@ public class MapsActivity extends AppCompatActivity implements
                 if ( dataSnapshot != null ) {
 
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-
-                        Log.i("Ygritte", snapshot.toString());
+                        //Log.i("Ygritte", snapshot.toString());
                         CrimeHotspot crimeHotspot = snapshot.getValue(CrimeHotspot.class);
                         addMarker(crimeHotspot.getCrimeType(), "Please be on alert for possible "+crimeHotspot.getCrimeType(), crimeHotspot.getLatitude(), crimeHotspot.getLongitude());
 
@@ -102,12 +102,14 @@ public class MapsActivity extends AppCompatActivity implements
     public void addMarker(String title, String message, double lat, double longi) {
 
         LatLng markerLatLong = new LatLng(lat, longi);
-        if (mMap != null)
+        if (mMap != null) {
             mMap.addMarker(new MarkerOptions()
                     .title(title)
                     .snippet(message)
                     .anchor(0.0f, 1.0f)
                     .position(markerLatLong));
+
+        }
     }
 
     /**
@@ -145,6 +147,7 @@ public class MapsActivity extends AppCompatActivity implements
         }
         mMap.setMyLocationEnabled(true);
 
+        Log.i("Ygritte", " longi "+current_longi);
         if ( current_longi != null ) {
             LatLng currentLatLng = new LatLng(current_lat, current_longi);
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 16));
