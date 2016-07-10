@@ -1,3 +1,61 @@
 <resources>
-    <string name="app_name">CrimeSpotter</string>
+    <string name="app_name">Crime Spotter</string>
+    <string name="register">Register</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+
+    <string name="crime_spotter">Crime Spotter</string>
+    <string name="no_location_detected">No Location Found</string>
+
+    <string name="action_logout">Logout</string>
+
+    <string name="text_dont_have_account">Don\'t have an account?</string>
+    <string name="text_already_have_account">Already have an account?</string>
+
+    <string name="button_create_account">Sign Up</string>
+    <string name="button_sign_in">Sign In</string>
+    <string name="button_signin_with_password">Login</string>
+
+    <string name="hint_enter_email">Email is required</string>
+    <string name="hint_enter_password">Password is required</string>
+
+    <!-- Instructions and Loading Text -->
+    <string name="progress_dialog_loading">Loading…</string>
+    <string name="progress_dialog_authenticating_with_firebase">Authenticating with Firebase…</string>
+    <string name="progress_dialog_creating_user_with_firebase">Attempting to create account…</string>
+    <string name="progress_dialog_check_inbox">Please check your inbox for your password</string>
+    <string name="progress_dialog_login">Signing In</string>
+
+    <!-- Errors -->
+    <string name="dialog_title_error">Error</string>
+    <string name="error_message_failed_sign_in_no_network">There was a problem with the network connection.\nAre you sure you\'re connected to the internet?</string>
+
+    <string name="log_error_invalid_provider">"Invalid provider: "</string>
+    <string name="log_error_failed_to_change_password">"Failed to change the password: "</string>
+
+    <string name="error_invalid_email_not_valid">%s is not a valid email</string>
+    <string name="error_read_terms_and_condition">Please read Terms and Conditions</string>
+    <string name="error_message_email_issue">There was an error with your email; please check that you entered it correctly.</string>
+    <string name="error_you_didnt_give_permissions">You must give ShoppingList++ permission to access your Google account information if you want to use Google sign-in.</string>
+    <string name="error_email_taken">The email is already taken.</string>
+    <string name="error_invalid_password_not_valid">Please enter a password that is at least 6 characters long.</string>
+    <string name="error_cannot_be_empty">This cannot be empty.</string>
+    <string name="error_invalid_contact_number">This contact is invalid.</string>
+
+    <string name="email_input">Email</string>
+    <string name="password_input">Password</string>
+
+    <string-array name="crime_hotspots_array">
+        <item>Mugging</item>
+        <item>Smash and Grab</item>
+        <item>Hijacking</item>
+        <item>Rape</item>
+    </string-array>
+
+    <string name="title_report_crime">Crime Spotter</string>
+    <string name="button_report">REPORT</string>
+    <string name="button_cancel">CANCEL</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="action_map">Map</string>
+
 </resources>
