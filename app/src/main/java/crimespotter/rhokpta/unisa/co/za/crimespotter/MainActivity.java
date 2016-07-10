@@ -1,5 +1,6 @@
 package crimespotter.rhokpta.unisa.co.za.crimespotter;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -7,11 +8,14 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity implements
@@ -35,6 +39,43 @@ public class MainActivity extends AppCompatActivity implements
                     .build();
         }
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_logout) {
+            logout();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+    /**
+     * Logs out the user from their current session and starts LoginActivity.
+     * Also disconnects the mGoogleApiClient if connected and provider is Google
+     */
+    protected void logout() {
+
+        /* Logout if mProvider is not null */
+        FirebaseAuth.getInstance().signOut();
+
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+
+    }
+
+
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {

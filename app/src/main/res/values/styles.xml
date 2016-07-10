@@ -7,6 +7,13 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="Widget.CrimeSpotter.Button.Login" parent="android:Widget.Button">
+        <item name="android:paddingLeft">18dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:textSize">@dimen/login_buttons_text_size</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
     <style name="HeaderText">
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/colorGrey</item>

@@ -8,8 +8,10 @@
     <Button
         android:id="@+id/btnCrimeSpot"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="@string/crime_spotter"
+        android:background="@color/colorAccent"
+        style="@style/Widget.CrimeSpotter.Button.Login"
         android:layout_gravity="center|center_vertical"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp" />
